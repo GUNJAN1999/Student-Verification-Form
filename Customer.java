@@ -6,6 +6,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.student.springdemo.mvc.validation.CourseCode;
+
 public class Customer {
 	
 	private String firstName;
@@ -13,6 +15,16 @@ public class Customer {
 	@NotNull(message="is required!!")
 	@Size(min=2,message="is required!!")
 	private String lastName;
+	
+	@CourseCode
+	private String courseCode;
+	
+	public String getCourseCode() {
+		return courseCode;
+	}
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
 	// free passes detail
 	@Min(value=0,message="enter number greater than -1")
 	@Max(value=10,message="enter number less than 11")
